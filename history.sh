@@ -12,7 +12,7 @@ export PROMPT_COMMAND='{
   pid=$$;
   pname=$(ps -p $pid -o comm=);
 
-  echo "$(date "+%b %e %T") $(hostname) sudo: '"$login_user"': TTY='"$login_tty"' ; LOGIN_IP='"$login_ip"' ; PWD=$(pwd) ; USER=$(whoami) ; COMMAND=$cmd ; PROCESS=$pname ; PID=$pid ;"
+  echo "$(date "+%b %e %T") $(hostname) USER=$(whoami): TTY='"$login_tty"' ; LOGIN_IP='"$login_ip"' ; PWD=$(pwd) ; COMMAND=$cmd ; PROCESS=$pname ; PID=$pid ;"
 } >> /var/log/.histlog'
 
 if [ -z "$(readonly -p | grep PROMPT_COMMAND)" ]; then
