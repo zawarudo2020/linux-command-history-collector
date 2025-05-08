@@ -1,7 +1,7 @@
 curl -o /etc/profile.d/history.sh https://raw.githubusercontent.com/zawarudo2020/linux-command-history-collector/main/history.sh
 
 chmod +x /etc/profile.d/history.sh
-> /var/log/.histlog
+echo "" > /var/log/.histlog
 
 chmod 666 /var/log/.histlog
 
