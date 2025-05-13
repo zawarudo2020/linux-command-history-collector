@@ -13,7 +13,7 @@ export PROMPT_COMMAND='{
   pname=$(ps -p $pid -o comm=);
 
   echo "$(date "+%b %e %T") $(hostname) USER=$(whoami) ; TTY='"$login_tty"' ; LOGIN_IP='"$login_ip"' ; PWD=$(pwd) ; COMMAND=$cmd ; PROCESS=$pname ; PID=$pid ;"
-} >> /var/log/.histlog'
+} >> /opt/logs/.histlog'
 
 if [ -z "$(readonly -p | grep PROMPT_COMMAND)" ]; then
   readonly PROMPT_COMMAND
