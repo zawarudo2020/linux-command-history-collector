@@ -8,4 +8,5 @@ sudo systemctl start wazuh-agent
 
 Mac安裝指令
 curl -so wazuh-agent.pkg https://packages.wazuh.com/4.x/macos/wazuh-agent-4.6.0-1.intel64.pkg && echo "WAZUH_MANAGER='122.147.110.203' && WAZUH_AGENT_GROUP='mac'" > /tmp/wazuh_envs && sudo installer -pkg ./wazuh-agent.pkg -target /
+sudo sh -c 'echo "logcollector.remote_commands=1" >> /Library/Ossec/etc/local_internal_options.conf'
 sudo /Library/Ossec/bin/wazuh-control start
