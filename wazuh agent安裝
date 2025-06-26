@@ -1,0 +1,11 @@
+centOS安裝指令
+curl -o wazuh-agent-4.6.0-1.x86_64.rpm https://packages.wazuh.com/4.x/yum/wazuh-agent-4.6.0-1.x86_64.rpm && sudo WAZUH_MANAGER='122.147.110.203' WAZUH_AGENT_GROUP='default' rpm -ihv wazuh-agent-4.6.0-1.x86_64.rpm
+echo "logcollector.remote_commands=1" >> /var/ossec/etc/local_internal_options.conf
+sudo systemctl daemon-reload
+sudo systemctl enable wazuh-agent
+sudo systemctl start wazuh-agent
+
+
+Mac安裝指令
+curl -so wazuh-agent.pkg https://packages.wazuh.com/4.x/macos/wazuh-agent-4.6.0-1.intel64.pkg && echo "WAZUH_MANAGER='122.147.110.203' && WAZUH_AGENT_GROUP='mac'" > /tmp/wazuh_envs && sudo installer -pkg ./wazuh-agent.pkg -target /
+sudo /Library/Ossec/bin/wazuh-control start
