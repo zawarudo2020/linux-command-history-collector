@@ -5,7 +5,7 @@ LOG_DIR="/opt/logs"
 LOG_FILE="$LOG_DIR/unowned_binaries.log"
 mkdir -p "$LOG_DIR"
 chmod 755 "$LOG_DIR"
-
+> "$LOG_FILE"
 
 # 當前時間字串（供日誌使用）
 now() {
@@ -14,7 +14,7 @@ now() {
 
 echo "📦   掃描 /usr/bin /usr/sbin 中所有檔案..."
 
-BIN_PATHS=("/usr/local/bin" "/usr/local/sbin" "/usr/bin" "/usr/sbin")
+BIN_PATHS=("/tmp" "/etc" "/usr/local/bin" "/usr/local/sbin" "/usr/bin" "/usr/sbin")
 
 for DIR in "${BIN_PATHS[@]}"; do
   echo "🔍   檢查目錄: $DIR"
