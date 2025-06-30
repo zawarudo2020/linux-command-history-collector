@@ -21,8 +21,8 @@ for DIR in "${BIN_PATHS[@]}"; do
   find "$DIR" -type f | while read file; do
     rpm -qf "$file" &>/dev/null
     if [[ $? -ne 0 ]]; then
-      md5=$(md5sum "$file" | awk '{print $1}')
-      echo "$(now) $(hostname); FILE : $file does not belongs to any rpm package; md5 : $md5" >> "$LOG_FILE"
+      sha256=$(sha256sum "$file" | awk '{print $1}')
+      echo "$(now) $(hostname); FILE : $file does not belongs to any rpm package; sha256 : $sha256" >> "$LOG_FILE"
     fi
   done
 done
