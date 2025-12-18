@@ -14,7 +14,7 @@ now() {
 
 echo "📦   掃描 /usr/bin /usr/sbin 中所有檔案..."
 
-BIN_PATHS=("/tmp" "/etc" "/usr/local/bin" "/usr/local/sbin" "/usr/bin" "/usr/sbin")
+BIN_PATHS=("/usr/local/bin" "/usr/local/sbin" "/usr/bin" "/usr/sbin")
 
 for DIR in "${BIN_PATHS[@]}"; do
   echo "🔍   檢查目錄: $DIR"
