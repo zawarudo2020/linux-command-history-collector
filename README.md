@@ -1,9 +1,12 @@
+history.sh安裝:
 curl -o /etc/profile.d/history.sh https://raw.githubusercontent.com/zawarudo2020/linux-command-history-collector/main/history.sh
 
 chmod +x /etc/profile.d/history.sh
 echo "" > /var/log/.histlog
 
 chmod 666 /var/log/.histlog
+
+wazuh整合command log
 
 寫入到 /var/ossec/etc/decoders/local_decoder.xml
 注意if the log is Syslog-like, then prematch only analyzes the log after the Syslog-like header. If the log is not Syslog-like, then it analyzes the entire log.
