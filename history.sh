@@ -11,6 +11,6 @@ export PROMPT_COMMAND='{
   cmd=$(history 1 | { read x c; echo "$c"; });
   pid=$$;
   pname=$(ps -p $pid -o comm=);
-
-  echo "$(date +"%Y-%m-%dT%H:%M:%S%:z") $(hostname) USER=$(whoami) ; TTY='"$login_tty"' ; LOGIN_IP='"$login_ip"' ; PROCESS=$pname ; PID=$pid ; COMMAND=$cmd ; PWD=$(pwd) ;"
+  ppname=$(ps -p $PPID -o comm=);
+  echo "$(date +"%Y-%m-%dT%H:%M:%S%:z") $(hostname) USER=$(whoami) ; TTY='"$login_tty"' ; LOGIN_IP='"$login_ip"' ; PROCESS=$pname ; PID=$pid ; PPROCESS=$ppname ;COMMAND=$cmd ; PWD=$(pwd) ;"
 } >> /opt/logs/.histlog'
