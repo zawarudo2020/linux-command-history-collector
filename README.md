@@ -4,9 +4,9 @@ curl -o /etc/profile.d/history.sh https://raw.githubusercontent.com/zawarudo2020
 
 chmod +x /etc/profile.d/history.sh
 
-echo "" > /var/log/.histlog
+echo "" > /opt/logs/.histlog
 
-chmod 666 /var/log/.histlog
+chmod 666 /opt/logs/.histlog
 
 wazuh整合command log:
 
