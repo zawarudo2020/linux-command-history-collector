@@ -125,7 +125,8 @@ if $programname == 'snoopy' and
    not ($msg contains 'filename:/usr/bin/locale') and
    not ($msg contains 'filename:/usr/bin/who') and
    not ($msg contains 'basename /usr/bin/bash') and
-   not ($msg contains 'find /etc/debuginfod')
+   not ($msg contains 'find /etc/debuginfod') and
+   not ($msg contains 'cwd:/var/ossec')
 then /opt/logs/snoopy.log
 & stop
 EOF
