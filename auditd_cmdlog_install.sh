@@ -8,4 +8,5 @@ cat >> /etc/audit/rules.d/audit.rules << 'EOF'
 -a always,exclude -F gid=wazuh
 -a always,exclude -F gid=zabbix
 EOF
+curl -o /etc/audit/auditd.conf https://raw.githubusercontent.com/zawarudo2020/linux-command-history-collector/refs/heads/main/auditd.conf
 service auditd restart
