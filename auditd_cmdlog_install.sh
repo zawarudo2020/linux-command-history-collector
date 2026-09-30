@@ -3,7 +3,7 @@ yum install -y audit audit-libs
 systemctl enable auditd
 systemctl start auditd
 cd /etc/audit/rules.d
-mkdir -p /root/audit-backup && cp -a /etc/audit/rules.d/* /root/audit-backup/
+mkdir -p /etc/audit/audit-backup && cp -a /etc/audit/rules.d/* /etc/audit/audit-backup/
 
 # 00:載入選項,錯誤行跳過不中斷
 cat > 00-options.rules <<'EOF'
