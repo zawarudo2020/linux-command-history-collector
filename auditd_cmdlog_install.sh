@@ -55,6 +55,6 @@ cp /etc/audit/auditd.conf /etc/audit/auditd.conf.bak
 sed -i \
   -e 's/^max_log_file[[:space:]]*=.*/max_log_file = 1024/' \
   -e 's/^num_logs[[:space:]]*=.*/num_logs = 10/' \
-  -e "s|^log_file[[:space:]]*=.*|log_file = /opt/logs/audit/audit.log' \
+  -e "s|^log_file[[:space:]]*=.*|log_file = /opt/logs/audit/audit.log|" \
   /etc/audit/auditd.conf
 service auditd restart
