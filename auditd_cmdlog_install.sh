@@ -16,11 +16,11 @@ cat > 10-base.rules <<'EOF'
 ## 清空現有規則
 -D
 ## 核心佇列大小
--b 8192
+-b 65536
 ## 失敗模式:1=printk
 -f 1
 ## 佇列滿時等待時間
---backlog_wait_time 60000
+--backlog_wait_time 0
 EOF
 
 # 20:Wazuh 4.3 以後(群組 wazuh)
