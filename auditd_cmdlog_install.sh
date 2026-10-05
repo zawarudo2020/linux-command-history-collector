@@ -47,8 +47,6 @@ cat > 50-cmdlog.rules <<'EOF'
 -a always,exit -F arch=b32 -S execve -k cmdlog
 EOF
 
-# 刪掉原本的 audit.rules
-rm -f /etc/audit/rules.d/audit.rules
 
 # 建立日誌目錄並修復權限
 LOG_DIR="/opt/logs/audit"
