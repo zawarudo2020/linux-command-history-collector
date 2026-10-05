@@ -3,7 +3,7 @@ yum install -y audit audit-libs
 systemctl enable auditd
 systemctl start auditd
 cd /etc/audit/rules.d
-mkdir -p /etc/audit/audit-backup && cp -a /etc/audit/rules.d/* /etc/audit/audit-backup/
+mkdir -p /etc/audit/audit-backup && cp -a /etc/audit/rules.d/* /etc/audit/audit-backup/ && rm -f /etc/audit/rules.d/*.rules
 
 # 00:載入選項,錯誤行跳過不中斷
 cat > 00-options.rules <<'EOF'
@@ -50,7 +50,12 @@ EOF
 # 刪掉原本的 audit.rules
 rm -f /etc/audit/rules.d/audit.rules
 
-mkdir /opt/logs/audit
+# 建立日誌目錄並修復權限
+LOG_DIR="/opt/logs/audit"
+mkdir -p "$LOG_DIR"
+chmod 700 "$LOG_DIR"
+chown root:root "$LOG_DIR"
+
 cp /etc/audit/auditd.conf /etc/audit/auditd.conf.bak
 sed -i \
   -e 's/^max_log_file[[:space:]]*=.*/max_log_file = 1024/' \
